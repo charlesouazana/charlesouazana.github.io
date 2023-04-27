@@ -376,5 +376,3 @@ On décide aussi d'afficher une vue mettant en lumières la centralité des comp
 ![alt](https://user-images.githubusercontent.com/104632559/202036125-b329b6c5-e72b-41fe-8ac3-f046c9d7a1cf.png)
 
 On remarque que les trois dernières images donnent des résultats très similaires. Néanmmoins, l'algorithme de centralité met tout de même bien en avant la centralité des noeuds européens.
-
-Charles Ouazana.
