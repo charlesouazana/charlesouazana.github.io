@@ -1,116 +1,123 @@
-# The Hacker theme
+# Idée Générale
+Le but de ce TP est d'implémenter les fonctions _de recherche, d' intersection, de suppression et  d'insertion_ sur une table de hachage avec un hachage et une fonction de stockage définis préalablement.
+## Fichier openfile
+#### Le fichier open_file ne contient qu'une seule fonction, la fonction `open_file`.
+Cette fonction a pour argument le nom du fichier de type `:str` et renvoie une liste contenant tous les mots du fichier sans le `\n`.  
 
-[![.github/workflows/ci.yaml](https://github.com/pages-themes/hacker/actions/workflows/ci.yaml/badge.svg)](https://github.com/pages-themes/hacker/actions/workflows/ci.yaml) [![Gem Version](https://badge.fury.io/rb/jekyll-theme-hacker.svg)](https://badge.fury.io/rb/jekyll-theme-hacker)
+---
+## Fichier Hachage.py
+Le fichier hachage.py contient les fonctions de hachage et de stockage codées précédemment. 
+Trois fonctions de ce fichier sont utilisés pour ce TP.
 
-*Hacker is a Jekyll theme for GitHub Pages. You can [preview the theme to see what it looks like](http://pages-themes.github.io/hacker), or even [use it today](#usage).*
-
-![Thumbnail of Hacker](thumbnail.png)
-
-## Usage
-
-To use the Hacker theme:
-
-1. Add the following to your site's `_config.yml`:
-
-    ```yml
-    remote_theme: pages-themes/hacker@v0.2.0
-    plugins:
-    - jekyll-remote-theme # add this line to the plugins list if you already have one
-    ```
-
-2. Optionally, if you'd like to preview your site on your computer, add the following to your site's `Gemfile`:
-
-    ```ruby
-    gem "github-pages", group: :jekyll_plugins
-    ```
-
-## Customizing
-
-### Configuration variables
-
-Hacker will respect the following variables, if set in your site's `_config.yml`:
-
-```yml
-title: [The title of your site]
-description: [A short description of your site's purpose]
+### Fonction `hachage_2` 
+À partir d'un mot et de la taille de la TAD génère la valeur de hachage du mot.  
+La fonction `hachage_2` réalise un hachage de jenkins pondéré d'une chaîne de caractère : 
+#### Exemple
+```python
+X = 'a'
+M = 786307
+print(hachage_2(X,M))
 ```
-
-Additionally, you may choose to set the following optional variables:
-
-```yml
-show_downloads: ["true" or "false" (unquoted) to indicate whether to provide a download URL]
-google_analytics: [Your Google Analytics tracking ID]
 ```
+86309
+```
+### Fonction `chaining`
+La fonction `chaining` prend en argument : 
+- A : Une table de hachage avec un stockage en adressage fermé de type `:list`
+- x : Un mot à y introduire de type `:str`
+- h : La valeur de hachage du mot de type `:ìnt`
 
-### Stylesheet
+Elle modifie le tableau A entré en paramètre.
+#### Exemple
+```python
+A = [[]]
+x ='a'
+h = 0
+A = chaining(A,h,x)
+print(A)
+```
+````
+[['a']
+````
+### Fonction `hash_table`
+La fonction `hash_table` prend en argument :
+- hachage : Une fonction de hachage (par exemple `hachage_2`)
+- stockage : Une fonction de stockage (par exemple stockage)
+- *arg : 
+    - Une liste contenant la liste des mots que l'on veut hacher cette liste est obtenue par la fonction open_file du fichier openfile.py
+    - Un entier correspondant à la taille de la table de hachage
 
-If you'd like to add your own custom styles:
+Elle renvoie une table de hachage de taille M contenant les éléments de la liste contenu dans *args.
+#### Exemple
+```python
+hachage = hachage_2
+stockage = chaining
+f1 = open_file('/Users/charlesouazana/Downloads/word2.txt')
+M = nextprime(len(f1)/0.3)
+hash_table = hash_table(hachage, stockage, [f1,M])
+print(hash_table[:10])
+```
+````
+[['affusion', 'averruncation'], ['hydrocholecystis'], [], [], ['breathlessly'], [], ['svantovit'], [], ['cordonnet', 'misderivation'], ['cubitale']]
+````
+___
+## Fichier intersection.py
+Le fichier intersection.py contient les fonctions __recherche__, __insertion__, __suppresion__, __intersection__.
 
-1. Create a file called `/assets/css/style.scss` in your site
-2. Add the following content to the top of the file, exactly as shown:
-    ```scss
-    ---
-    ---
+### Fonction `recherche`
+La fonction `recherche` prend comme argument : 
+- f1 : Une table de hachage de type ```list```
+- word : Un mot de type ```str```
+- M : Un entier de type ```int```
 
-    @import "{{ site.theme }}";
-    ```
-3. Add any custom CSS (or Sass, including imports) you'd like immediately after the `@import` line
+Elle renvoie un booléen selon que le mot est dans la table de hachage ou non. 
+#### Exemple
+```python
+f1 = open_file('/Users/charlesouazana/Downloads/word2.txt')
+M = nextprime(len(f1)/0.3)
+print(recherche(f1, 'aaron'))
+```
+```
+True
+```
+#### Complexité 
+- La complexité en temps est _O(1+N/M)_
+- La complexité en espace est _O(1)_
+### Fonction `intersection`
+La fonction `intersection` prend en argument deux chemins de fichier et renvoie une liste des mots communs et la longueur de cette liste sous forme de tuple.
+#### Exemple
+```python
+path1 = '/Users/charlesouazana/Downloads/word2.txt'
+path2 = '/Users/charlesouazana/Downloads/texte_Shakespeare.txt'
+L , n = intersection(path1,path2)
+print(L[:10],n)
+```
+````
+['a', 'aaron','abandon', 'abandoned', 'abase', 'abash', 'abate', 'abatement','abbess', 'abbey']
+---------------------------------------
+13821
+````
+#### Complexité
+- La complexité en temps est _O(N*(1+N/M))_
+- La complexité en espace est en _O(N)_ car on stocke le fichier file_1 au cours de l'éxécution de la fonction.
 
-*Note: If you'd like to change the theme's Sass variables, you must set new values before the `@import` line in your stylesheet.*
+### Fonction `insertion` 
+La fonction `insertion` prend en argument : 
+- file : Le chemin de fichier dans lequel on veut insérer le mot de type `:str`
+- f1 : La table de hachage associé à ce fichier de type `:list`
+- word : Le mot que l'on souhaite insérer de type `str` 
+- M : La taille de la table de hachage de type `:int`
 
-### Layouts
+Elle modifie la table de hachage en insérant et insère le mot (plus `\n`) à la fin du fichier mais elle ne retourne rien.
 
-If you'd like to change the theme's HTML layout:
+### Fonction `suppression`
+La fonction `suppression` prend en argument : 
+- file : Le chemin de fichier dans lequel on veut insérer le mot de type `:str`
+- f1 : La table de hachage associé à ce fichier de type `:list`
+- word : Le mot que l'on souhaite insérer de type `str` 
+- M : La taille de la table de hachage de type `:int`
 
-1. For some changes such as a custom `favicon`, you can add custom files in your local `_includes` folder. The files [provided with the theme](https://github.com/pages-themes/hacker/tree/master/_includes) provide a starting point and are included by the [original layout template](https://github.com/pages-themes/hacker/blob/master/_layouts/default.html).
-2. For more extensive changes, [copy the original template](https://github.com/pages-themes/hacker/blob/master/_layouts/default.html) from the theme's repository<br />(*Pro-tip: click "raw" to make copying easier*)
-3. Create a file called `/_layouts/default.html` in your site
-4. Paste the default layout content copied in the first step
-5. Customize the layout as you'd like
+Elle modifie la table de hachage en retirant le mot dans l'alvéole correspondante.  
+En outre, elle réécrit le fichier en réécrivant chacune des lignes, à l'exception de la ligne égale au mot que l'on souhaite retirer.
+___
 
-### Customizing Google Analytics code
-
-Google has released several iterations to their Google Analytics code over the years since this theme was first created. If you would like to take advantage of the latest code, paste it into `_includes/head-custom-google-analytics.html` in your Jekyll site.
-
-### Overriding GitHub-generated URLs
-
-Templates often rely on URLs supplied by GitHub such as links to your repository or links to download your project. If you'd like to override one or more default URLs:
-
-1. Look at [the template source](https://github.com/pages-themes/hacker/blob/master/_layouts/default.html) to determine the name of the variable. It will be in the form of `{{ site.github.zip_url }}`.
-2. Specify the URL that you'd like the template to use in your site's `_config.yml`. For example, if the variable was `site.github.url`, you'd add the following:
-    ```yml
-    github:
-      zip_url: http://example.com/download.zip
-      another_url: another value
-    ```
-3. When your site is built, Jekyll will use the URL you specified, rather than the default one provided by GitHub.
-
-*Note: You must remove the `site.` prefix, and each variable name (after the `github.`) should be indent with two space below `github:`.*
-
-For more information, see [the Jekyll variables documentation](https://jekyllrb.com/docs/variables/).
-
-## Roadmap
-
-See the [open issues](https://github.com/pages-themes/hacker/issues) for a list of proposed features (and known issues).
-
-## Project philosophy
-
-The Hacker theme is intended to make it quick and easy for GitHub Pages users to create their first (or 100th) website. The theme should meet the vast majority of users' needs out of the box, erring on the side of simplicity rather than flexibility, and provide users the opportunity to opt-in to additional complexity if they have specific needs or wish to further customize their experience (such as adding custom CSS or modifying the default layout). It should also look great, but that goes without saying.
-
-## Contributing
-
-Interested in contributing to Hacker? We'd love your help. Hacker is an open source project, built one contribution at a time by users like you. See [the CONTRIBUTING file](docs/CONTRIBUTING.md) for instructions on how to contribute.
-
-### Previewing the theme locally
-
-If you'd like to preview the theme locally (for example, in the process of proposing a change):
-
-1. Clone down the theme's repository (`git clone https://github.com/pages-themes/hacker`)
-2. `cd` into the theme's directory
-3. Run `script/bootstrap` to install the necessary dependencies
-4. Run `bundle exec jekyll serve` to start the preview server
-5. Visit [`localhost:4000`](http://localhost:4000) in your browser to preview the theme
-
-### Running tests
-
-The theme contains a minimal test suite, to ensure a site with the theme would build successfully. To run the tests, simply run `script/cibuild`. You'll need to run `script/bootstrap` once before the test script will work.
