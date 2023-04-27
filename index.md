@@ -4,7 +4,7 @@ layout: default
 
 Text can be **bold**, _italic_, ~~strikethrough~~ or `keyword`.
 
-[Link to another page](./another-page.html).
+[resume](https://charlesouazana.github.io/resume.pdf).
 
 There should be whitespace between paragraphs.
 
