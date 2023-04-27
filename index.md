@@ -10,12 +10,19 @@ There should be whitespace between paragraphs.
 
 There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
 testesttest
-## About me ([Link to another page](https://louisabraham.github.io/resume.pdf)
+## About me ([resume](https://louisabraham.github.io/resume.pdf))
 
-> This is a blockquote following a header.
->
-> When something is important enough, you do it even if the odds are not in your favor.
+I created Nomad, a crypto startup which aims to reduce fees from intermediaries using cryptocurrencies as a payment method
 
+I am also a strong chess player, ranking in the top 10% on the [lichess](https://lichess.org/@/charlesouaza1998) in the rapid cadence.
+
+Finally, I enjoy doing research – I am a PhD candidate in Financial Economics and work on ML research with Rob Tibshirani (Stanford) – and writing open source code on github.
+
+Previously, I finished high school at 15, then studied mathematics and computer science at École polytechnique and ETH Zurich. I also was a competitive programmer who participated in ICPC, the most prestigious programming contest in the world. My team became Southwestern Europe champion and gold medalist and achieved France’s all-time record at the ICPC World Finals.
+
+If you want to discuss interesting topics, drop me an email: louis.abraham@yahoo.fr
+
+Or add me on Discord: Labo#8269
 ### Header 3
 
 ```js
