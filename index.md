@@ -16,5 +16,7 @@ If you want to discuss interesting topics, drop me an email: [charlesouazana@out
 
 ## Articles
 * [Neo4J / Gephi Graph Analysis](./neo4j.html)
-* [Tarjan Algorithm and plotly visualization](./tarjan.html)
+* [Tarjan Algorithm on Wikipedia pages and plotly visualization](./tarjan.html)
+* [Bloom filter implementation](./Bloom.html)
+* [Hash table implementation](./tarjan.html)
 * 
