@@ -3,10 +3,9 @@
 @import 'jekyll-theme-hacker';
 @import "{{ site.theme }}";
 
-#downloads {
-text-align: center;
-.btn {
-display: none;
-margin: 0;
+#downloads .btn {
+  display: none;
+  text-align: center;
+  margin: 0 0 20px;;
 }
 }
