@@ -65,6 +65,10 @@ True
 
 - `visualize_scc` : Cette méthode permet de visualiser et d'intéragir avec les composantes conexes du graphe. Cette méthode prend en argument deux seuis correspondant aux longeurs min et max des composantes que vous souhaitez visualiser. La méthode ouvre ensuite un graphe plotly dans votre navigateur qui permet d'intégragier avec le graphe.
 
+Avec la commande _visualize_scc_ on obtient plusieurs graphes similaires à celui-ci : 
+![alt](https://user-images.githubusercontent.com/104632559/235008669-dd20e417-1945-44a5-a164-d16d7df62d00.png)
+
+
 ## Performances de l'algorithme 
 L'algorithme a obtenu un meilleur score que l'algorithme de tarjan implémenté ici https://pypi.org/project/tarjan/#files.
 En effet :
