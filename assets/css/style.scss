@@ -1,18 +1,8 @@
----
----
-
 @import 'jekyll-theme-hacker';
 @import "{{ site.theme }}";
 
 #downloads .btn {
   display: none;
   text-align: center;
-  margin: 0px 120px;
+  margin: 0;
 }
-
-.container {
-  width: 90%;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
