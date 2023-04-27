@@ -14,9 +14,10 @@ I also enjoy doing research in AI and I have previously work on projects such as
 
 If you want to discuss interesting topics, drop me an email: [charlesouazana@outlook.com](mailto:charlesouazana@outlook.com)
 
-## Articles
+## Work
+* [Big Data clustering on wine quality dataset](./bdclustering.md)
 * [Neo4J / Gephi Graph Analysis](./neo4j.html)
 * [Tarjan Algorithm on Wikipedia pages and plotly visualization](./tarjan.html)
+* [Electricity consumption forecast](./st_pred.html)
 * [Bloom filter implementation](./Bloom.html)
 * [Hash table implementation](./tarjan.html)
-* 
