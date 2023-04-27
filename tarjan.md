@@ -86,4 +86,4 @@ def exec_time():
 >>> 4.34 s ± 23.2 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 ````
 
-Je pense néanmoins que cette algorithme pourrait potentillement être utilisé en n'utilisant pas de sheel et en utilisant uniquement python pour la lecture et le traitement des fichiers.
+Je pense néanmoins que cette algorithme pourrait potentillement être utilisé en n'utilisant pas de shell et en utilisant uniquement python pour la lecture et le traitement des fichiers.
