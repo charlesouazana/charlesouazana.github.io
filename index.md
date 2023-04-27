@@ -20,7 +20,7 @@ Previously, I did a classes préparatoires aux grandes écoles d'ingénieurs (PS
 
 I also enjoy doing research in AI and I have previously work on projects such as Hurricane Forecasting, Medical image synthesis and an Algorithmic trading strategy.
 
-If you want to discuss interesting topics, drop me an email: [charlesouazana@outlook.com](mailto:admin@w3schools.io)
+If you want to discuss interesting topics, drop me an email: [charlesouazana@outlook.com](mailto:charlesouazana@outlook.com)
 
 
 ```js
