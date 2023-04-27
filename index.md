@@ -14,5 +14,5 @@ I also enjoy doing research in AI and I have previously work on projects such as
 
 If you want to discuss interesting topics, drop me an email: [charlesouazana@outlook.com](mailto:charlesouazana@outlook.com)
 
-##Articles
+## Articles
 * [Neo4J Graph Analysis](https://charlesouazana.github.io/neo4j.md)
