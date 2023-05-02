@@ -1,5 +1,3 @@
-Charles Ouazana
-
 # Analyse du graphe des catégoreis wikipedia
 
 ## Pré-requis
