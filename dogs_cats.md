@@ -1,7 +1,4 @@
----
-title: 1. Single file
-layout: page
----
+## Fastai dogs and cats classifiers with gradio
 
 <input id="photo" type="file">
 <div id="results"></div>
