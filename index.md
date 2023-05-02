@@ -21,3 +21,6 @@ If you want to discuss interesting topics, drop me an email: [charlesouazana@out
 * [Electricity consumption forecast](./st_pred.html)
 * [Bloom filter implementation](./Bloom.html)
 * [Hash table implementation](./tarjan.html)
+
+## Hugging Face Spaces
+* [Dogs and cats classfier](./dogs_cats.html)
