@@ -2,7 +2,8 @@
 
 Dogs and cats classifier implementation using Hugging Face Spaces and Gradio based on the [Fastai](https://course.fast.ai/Lessons/lesson2.html) course.
 
-<input id="photos" type="file" multiple="">
+<input id="photo" type="file">
+<div id="results"></div>
 <script>
   async function loaded(reader) {
     const response = await fetch('https://chaozn-fastai-dogs-vs-cats.hf.space/api/predict/', {
@@ -11,14 +12,12 @@ Dogs and cats classifier implementation using Hugging Face Spaces and Gradio bas
     });
     const json = await response.json();
     const label = json['data'][0]['confidences'][0]['label'];
-    const div = document.createElement('div');
-    div.innerHTML = `<br/><img src="${reader.result}" width="300"> <p>${label}</p>`
-    document.body.append(div);
+    results.innerHTML = `<br/><img src="${reader.result}" width="300"> <p>${label}</p>`
   }
-  function read(file) {
+  function read() {
     const reader = new FileReader();
     reader.addEventListener('load', () => loaded(reader))
-    reader.readAsDataURL(file);
+    reader.readAsDataURL(photo.files[0]);
   }
-  photos.addEventListener('input', () => { [...photos.files].map(read) });
+  photo.addEventListener('input', read);
 </script>
