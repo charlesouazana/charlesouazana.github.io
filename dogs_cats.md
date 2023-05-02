@@ -5,7 +5,7 @@ Dogs and cats classifier implementation using Hugging Face Spaces and Gradio bas
 <input id="photos" type="file" multiple="">
 <script>
   async function loaded(reader) {
-    const response = await fetch('https://chaozn-fastai-dogs-vs-cats.hf.space/api/predict', {
+    const response = await fetch('https://chaozn-fastai-dogs-vs-cats.hf.space/api/predict/', {
       method: "POST", body: JSON.stringify({ "data": [reader.result] }),
       headers: { "Content-Type": "application/json" }
     });
