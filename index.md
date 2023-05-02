@@ -23,4 +23,4 @@ If you want to discuss interesting topics, drop me an email: [charlesouazana@out
 * [Hash table implementation](./tarjan.html)
 
 ## Hugging Face Spaces
-* [Dogs and cats classifier](./dogs_cats.html)
+* [Dogs and cats classifier](./dogs_cats.md)
