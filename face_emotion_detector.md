@@ -1,6 +1,6 @@
 ## Face emotion detector with gradio and hugging face spaces
 
-Face emotion classifier implementation using Hugging Face Spaces and Gradio based on the [Fastai](https://course.fast.ai/Lessons/lesson2.html) course.
+Face emotion classifier implementation using Hugging Face Spaces and Gradio based on the [Fastai](https://course.fast.ai/Lessons/lesson3.html) course.
 
 <input id="photo" type="file">
 <div id="results"></div>
